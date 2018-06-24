@@ -14,6 +14,7 @@ app.use(
   cookieSession({ maxAge: 30 * 24 * 60 * 60 * 1000, keys: [keys.cookieKey] })
 );
 
+//  Tells passport to make use of cookies to handle authentication
 app.use(passport.initialize());
 app.use(passport.session());
 

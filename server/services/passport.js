@@ -2,15 +2,20 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
-
 const User = mongoose.model('users');
 
-passport.serializeUser((user, done) => done(null, user.id));
+//  Get User Model Instance
+//  Extracts cookie data and pulls user id out of cookie data
+//  Turns that user id into a user
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
 
-passport.deserializeUser((id, done) =>
-  User.findById(id).then(user => done(null, user))
-);
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => done(null, user));
+});
 
+//  Google OAuth Flow
 passport.use(
   new GoogleStrategy(
     {
