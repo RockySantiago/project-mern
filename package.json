@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "project-mern-dev",
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
@@ -7,8 +7,10 @@
     "yarn": "1.7.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./server/index.js"
   },
+  "repository": "https://github.com/RockySantiago/project-mern.git",
+  "author": "RockySantiago <raphael.santiago@icloud.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.3"
